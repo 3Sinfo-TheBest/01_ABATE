@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosità sui Motori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+            position: relative;
+        }
+
+
+        header {
+            background: url('https://example.com/immagine-motori.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        main {
+            padding: 20px;
+        }
+
+
+        .contact-form {
+            width: 18rem; /* Stessa larghezza delle card */
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 40;
+            margin: 10px auto; /* Centra il modulo */
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        label {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+
+        input, textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+
+        button {
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+
+        .car-details {
+            display: none;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1>Curiosità sui Motori</h1>
+        <nav>
+            <ul>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="col">
+                    <div class="card" style="width: 18rem; margin: 10px auto;">
+                        <img src="https://cdn.motori.it/TqEmIr-CI_r4-TL3H3vC5FdxSG4=/450x300/smart/https://www.motori.it/wp-content/uploads/2024/09/peugeot-e-5008.jpg" class="card-img-top" alt="Peugeot E-5008">
+                        <div class="card-body">
+                            <h5 class="card-title">Peugeot E-3008 e E-5008</h5>
+                            <p class="card-text">Le nuove varianti elettriche con 700 km di autonomia.</p>
+                            <a href="peogeot.html"><button class="btn btn-primary" >Scopri di più</button></a>
+                        </div>
+                    </div>
+                    <div class="car-details" id="peugeotDetails">
+                        <h5>Dettagli Peugeot E-3008 e E-5008</h5>
+                        <p>Queste vetture elettriche offrono un'autonomia di 700 km, tecnologia avanzata e comfort eccezionale per un viaggio senza pensieri.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('peugeotDetails')">Chiudi</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem; margin: 10px auto;">
+                        <img src="https://cdn.motori.it/KmMExKKHJpA6EQLTJVs84Np5tbg=/450x300/smart/https://www.motori.it/wp-content/uploads/2024/09/toyota-supra-1.jpg" class="card-img-top" alt="Toyota Supra">
+                        <div class="card-body">
+                            <h5 class="card-title">Toyota Supra</h5>
+                            <p class="card-text">Il ritorno del V8 per competere con Ford Mustang e Chevrolet Camaro.</p>
+                            <a href="toyota.html"><button class="btn btn-primary" >Scopri di più</button></a>
+                        </div>
+                    </div>
+                    <div class="car-details" id="supraDetails">
+                        <h5>Dettagli Toyota Supra</h5>
+                        <p>La nuova Toyota Supra combina potenza e design, con un motore V8 che offre prestazioni incredibili per ogni appassionato di auto.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('supraDetails')">Chiudi</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="contact-form" id="contatti">
+                        <h2>Contattaci</h2>
+                        <form>
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+
+
+                            <label for="messaggio">Messaggio:</label>
+                            <textarea id="messaggio" name="messaggio" required></textarea>
+
+
+                            <button type="submit">Invia</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 Curiosità sui Motori. Tutti i diritti riservati.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = (details.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
+
+

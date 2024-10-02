@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota Supra V8: Il Ritorno della Leggenda</title>
+    <!-- Collegamento a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Stile di base per il body */
+        body {
+            background: linear-gradient(to right, #000000, #333333); /* Un look dark e aggressivo come la Supra */
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        /* Stile per le immagini quadrate */
+        .square-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 5px solid #ff0000; /* Rosso audace come il cuore pulsante della Supra */
+            cursor: pointer;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .square-image:hover {
+            transform: scale(1.1);
+            border-color: #fff000; /* Un tocco giallo brillante per esaltare la potenza */
+        }
+
+        /* Lightbox per mostrare l'immagine ingrandita */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        /* X per chiudere l'immagine */
+        #lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Stile per il titolo principale */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff0000; /* Rosso Toyota Supra */
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Stile per il testo informativo */
+        .card-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #dddddd;
+        }
+
+        /* Pulsante "Torna alla Home" */
+        .btn-home {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            padding: 12px 25px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-home:hover {
+            background-color: #cc0000;
+            transform: scale(1.1);
+        }
+
+        /* Media query per dispositivi mobili */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="container text-start mt-5 mb-5">
+            <div class="presentation-section">
+                <h1>Il Ritorno della Leggenda: Toyota Supra V8</h1>
+                <p class="text-center lead">"Il rombo del V8 è tornato. La Supra si prepara a sfidare Ford Mustang e Chevrolet Camaro, con un motore che è pura potenza e design senza tempo."</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center mb-4">Toyota Supra V8 2024</h2>
+                    <p class="text-center lead mb-4">Una nuova era per l'auto sportiva giapponese che ha ridefinito il concetto di potenza e precisione. Ora con un V8 pronto a dominare le strade.</p>
+
+                    <!-- Griglia con tre immagini affiancate -->
+                    <div class="row mb-4">
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <img class="square-image" src="https://www.toyota.com/imgix/responsive/images/gallery/photos-videos/2023/supra/2023-Toyota-GR-Supra-A91-MT-001.jpg" alt="Toyota Supra Front" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <img class="square-image" src="https://cdn.motor1.com/images/mgl/3nVpK/s1/toyota-gr-supra-2023.jpg" alt="Toyota Supra Rear" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <img class="square-image" src="https://toyota-cms-media.s3.amazonaws.com/wp-content/uploads/2021/06/2021_GR_SUPRA_Launch_Edition_002.jpg" alt="Toyota Supra Side" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Testo informativo sui pro e contro delle vetture -->
+                    <div class="card-body">
+                        <h5>Perché la Toyota Supra V8 è tornata?</h5>
+                        <p class="card-text">
+                            La Toyota Supra è sempre stata un'icona, ma il 2024 segna il ritorno di qualcosa di leggendario: il motore V8. In un'epoca di turbo e ibridi, Toyota ha deciso di sfidare la convenzione e riportare il cuore pulsante che ha reso la Supra immortale.
+                        </p>
+                        <h6 class="fw-bold">|Vantaggi</h6>
+                        <ul>
+                            <li><strong>Motore V8 Ruggente:</strong> Un motore che non si sente solo, si vive. 450 cavalli di pura potenza per un'accelerazione che ti spinge contro il sedile.</li>
+                            <li><strong>Design Inconfondibile:</strong> Linee aggressive, fari a LED affilati e una silhouette che è puro dinamismo. La Supra cattura lo sguardo e non lo lascia più andare.</li>
+                            <li><strong>Performance di Livello Mondiale:</strong> Con un sistema di trazione ottimizzato, la Supra garantisce una guida precisa e reattiva su strada e pista.</li>
+                            <li><strong>Interni Sportivi:</strong> Sedili sportivi avvolgenti, cockpit futuristico e materiali premium che ti fanno sentire ogni secondo come un pilota.</li>
+                        </ul>
+                        <h6 class="fw-bold">|Svantaggi</h6>
+                        <ul>
+                            <li><strong>Consumi Elevati:</strong> Il V8 ha un'anima affamata e non è certo l'auto più efficiente per la guida urbana quotidiana.</li>
+                            <li><strong>Prezzo Elevato:</strong> La potenza e il design hanno un costo, e la Supra V8 non è per chi cerca compromessi.</li>
+                            <li><strong>Comfort Rigido:</strong> Le sospensioni sportive offrono una maneggevolezza eccezionale, ma potrebbero risultare dure su strade dissestate.</li>
+                        </ul>
+                        <p>
+                            La Toyota Supra V8 del 2024 non è un'auto per tutti. È una macchina per chi cerca emozioni pure, per chi vuole sentirsi vivo ogni volta che accende il motore. 
+                            Con il suo V8 ruggente, si pone come rivale diretta di icone americane come la Ford Mustang e la Chevrolet Camaro. La domanda è: hai il coraggio di domarla?
+                        </p>
+                    </div>
+
+                    <!-- Pulsante "Torna alla Home" -->
+                    <a href="index.html" class="btn btn-home">Torna alla Home</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox per visualizzare l'immagine ingrandita -->
+    <div id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img src="" alt="Immagine ingrandita">
+    </div>
+
+    <script>
+        // Funzione per aprire l'immagine nel lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = lightbox.querySelector('img');
+            img.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        // Funzione per chiudere il lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
+
+    <!-- Bootstrap JS (opzionale) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
