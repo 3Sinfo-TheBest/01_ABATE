@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peugeot E-3008 e E-5008</title>
+    <!-- Collegamento a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Stile di base per il body */
+        body {
+            background: linear-gradient(to right, #e1e9f0, #f4f7f9);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Stile per le immagini quadrate */
+        .square-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 5px solid #2a2e26; /* Cambiato in un colore verde scuro per abbinarsi all'auto */
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .square-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox per mostrare l'immagine ingrandita */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none; /* Nascondiamo il lightbox finché non viene attivato */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        /* X per chiudere l'immagine */
+        #lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Stile per il titolo principale */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        /* Stile per il testo informativo */
+        .card-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Pulsante "Torna alla Home" */
+        .btn-home {
+            background-color: #2a2e26;
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            padding: 12px 25px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-home:hover {
+            background-color: #568a29;
+            transform: scale(1.05);
+        }
+
+        /* Media query per dispositivi mobili */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+
+<body>
+
+    <main>
+        <div class="container text-start mt-5 mb-5">
+            <div class="presentation-section">
+                <h1 class="nero text-center">Benvenuto nel Futuro della Mobilità Elettrica</h1>
+                <p class="text-center">"Scopri le nuove varianti elettriche Peugeot E-3008 e E-5008, progettate per offrirti un'esperienza di guida eccezionale e sostenibile!"</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center mb-4">Peugeot E-3008 e E-5008 Long Range</h2>
+                    <p class="text-center lead mb-4">Con un'autonomia di 700 km, queste vetture sono perfette per ogni esigenza di mobilità, dal lavoro ai viaggi.</p>
+
+                    <!-- Griglia con tre immagini affiancate -->
+                    <div class="row mb-4">
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <img class="square-image" src="https://cdn.motori.it/TqEmIr-CI_r4-TL3H3vC5FdxSG4=/450x300/smart/https://www.motori.it/wp-content/uploads/2024/09/peugeot-e-5008.jpg" alt="Peugeot E-5008" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <img class="square-image" src="https://stellantis3.dam-broadcast.com/medias/domain12808/media108103/2431079-75yy7ro62y-whr.jpg" alt="Peugeot E-3008" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <img class="square-image" src="https://www.peugeot.it/content/dam/peugeot/master/b2c/our-range/showroom/5008/2024-03/new-e-5008-mobile/PEUGEOT_E_5008_SHOWROOM_ALLURE3_M_750x560.jpg?imwidth=768" alt="Peugeot E-5008" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Testo informativo sui pro e contro delle vetture -->
+                    <div class="card-body">
+                        <h5>Perché scegliere la Peugeot E-3008 e E-5008?</h5>
+                        <p class="card-text">
+                            Le Peugeot E-3008 e E-5008 sono progettate per rispondere alle esigenze di chi cerca un'auto elettrica versatile e innovativa. 
+                            Questi modelli offrono numerosi vantaggi che li rendono ideali per la mobilità moderna.
+                        </p>
+                        <h6 class="fw-bold">|Vantaggi</h6>
+                        <ul>
+                            <li><strong>Autonomia Impressionante:</strong> Con un'autonomia di 700 km, queste vetture sono perfette per viaggi lunghi senza necessità di ricariche frequenti.</li>
+                            <li><strong>Design Elegante:</strong> Le linee moderne e accattivanti rendono queste auto un'ottima scelta per chi cerca stile e funzionalità.</li>
+                            <li><strong>Tecnologia Avanzata:</strong> Dotate di sistemi di infotainment all'avanguardia, offrono un'esperienza di guida connessa e personalizzata.</li>
+                            <li><strong>Comfort e Spazio:</strong> Gli interni spaziosi e confortevoli sono ideali per famiglie e viaggiatori frequenti.</li>
+                        </ul>
+                        <h6 class="fw-bold">|Svantaggi</h6>
+                        <ul>
+                            <li><strong>Costo Iniziale Elevato:</strong> Il prezzo di acquisto è superiore rispetto ai modelli a motore tradizionale, ma il risparmio sui costi di carburante può bilanciare l'investimento nel lungo periodo.</li>
+                            <li><strong>Accessibilità delle Stazioni di Ricarica:</strong> Sebbene l'infrastruttura di ricarica stia migliorando, in alcune aree potrebbe mancare una copertura adeguata.</li>
+                            <li><strong>Tempi di Ricarica:</strong> Ricaricare una vettura elettrica richiede più tempo rispetto al rifornimento di un'auto a benzina o diesel.</li>
+                        </ul>
+                        <p>
+                            In sintesi, le Peugeot E-3008 e E-5008 offrono un'ottima combinazione di prestazioni, comfort e tecnologia. 
+                            Considerare i pro e i contro è fondamentale per chi desidera investire in un veicolo elettrico moderno e sostenibile. 
+                            Questi modelli non solo rappresentano una scelta ecologica, ma anche una valida opzione per chi cerca un'auto di alta qualità.
+                        </p>
+                    </div>
+
+                    <!-- Pulsante "Torna alla Home" -->
+                    <a href="index.html" class="bottone btn btn-home">Torna alla Home</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox per visualizzare l'immagine ingrandita -->
+    <div id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img src="" alt="Immagine ingrandita">
+    </div>
+
+    <script>
+        // Funzione per aprire l'immagine nel lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = lightbox.querySelector('img');
+            img.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        // Funzione per chiudere il lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
+
+    <!-- Bootstrap JS (opzionale) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -4,141 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sito di Motori</title>
+    <title>Curiosità sui Motori</title>
     <style>
-        /* Stile generale del corpo */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: url('https://images.unsplash.com/photo-1511692458743-9b7d51aaf07e') no-repeat center center fixed; /* Sfondo di auto */
-            background-size: cover;
-            color: #fff;
-        }
-
-        /* Stile dell'intestazione */
-        header {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
+            background: linear-gradient(to bottom right, #e0f7fa, #80deea);
             position: relative;
         }
 
-        header h1 {
-            font-size: 3.5em;
-            margin: 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-        }
-
-        /* Stile del menu di navigazione */
-        nav {
-            margin-top: 20px;
+        header {
+            background: url('https://example.com/immagine-motori.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
         }
 
         nav ul li {
+            display: inline;
             margin: 0 15px;
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
         }
 
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Stile principale */
         main {
-            max-width: 1200px;
-            margin: 20px auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
         }
 
-        /* Stile del contenitore delle card */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px; /* Maggiore spazio tra le card */
+        .search-bar {
+            margin: 20px auto;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .car-details {
+            display: none;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
         }
 
-        /* Stile delle card */
-        .card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .card-img {
-            width: 100%;
-            height: 200px; /* Altezza fissa per tutte le immagini */
-            object-fit: cover; /* Mantiene il rapporto d'aspetto */
-        }
-
-        /* Stile della barra di ricerca */
-.search-bar {
-    display: flex;
-    justify-content: center; /* Centra la barra di ricerca */
-    margin: 20px 0; /* Margine verticale per distanziarla dal contenuto circostante */
-}
-
-.search-bar input {
-    width: 100%; /* Larghezza del 100% della barra */
-    max-width: 500px; /* Limita la larghezza massima */
-    padding: 10px; /* Spaziatura interna */
-    border-radius: 5px; /* Angoli arrotondati */
-    border: 1px solid #00796b; /* Bordo colorato */
-}
-
-       
-            /* Stile del footer */
         footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
+            background-color: #00796b;
+            color: #fff;
             text-align: center;
-            padding: 20px 0;
+            padding: 10px 0;
+            position: relative;
             margin-top: 20px;
         }
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
+        #contatti {
+            background-color: #004d40;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
-   
-   </style>
-</head>
 
-</html>
+        .favorite {
+            cursor: pointer;
+            color: gray;
+            font-size: 24px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
 
+        .favorite.selected {
+            color: gold;
+        }
 
+        /* Modulo di contatto */
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
 
-</html>
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+        }
 
+        .contact-form button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #005b4f;
+        }
+
+        .card {
+            width: 100%; /* Imposta la larghezza della card */
+            margin: 10px; /* Margine per lo spazio tra le card */
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -155,13 +143,10 @@
     </header>
 
     <main>
-              
-                                              <!-- Barra di ricerca -->
-             <div class="search-bar">
-           <input type="text" id="searchInput" placeholder="Cerca una macchina..." oninput="filterCars()">
-            </div>
-
-
+       <!-- Barra di ricerca -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Cerca una macchina..." oninput="filterCars()">
+</div>
 
         <div class="container text-center">
            
@@ -179,7 +164,11 @@
                             <p class="card-text">Le nuove varianti elettriche con 700 km di autonomia.</p>
                         </div>
                     </div>
-                    
+                    <div class="car-details" id="peugeotDetails">
+                        <h5>Dettagli Peugeot E-3008 e E-5008</h5>
+                        <p>Queste vetture elettriche offrono un'autonomia di 700 km, tecnologia avanzata e comfort eccezionale per un viaggio senza pensieri.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('peugeotDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Toyota Supra -->
@@ -195,7 +184,11 @@
                             <p class="card-text">Il ritorno del V8 per competere con Ford Mustang e Chevrolet Camaro.</p>
                         </div>
                     </div>
-                 
+                    <div class="car-details" id="supraDetails">
+                        <h5>Dettagli Toyota Supra</h5>
+                        <p>La nuova Toyota Supra combina potenza e design, con un motore V8 che offre prestazioni incredibili per ogni appassionato di auto.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('supraDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Alfa Romeo 4C -->
@@ -211,14 +204,18 @@
                             <p class="card-text">Una sportiva compatta con un design accattivante e un motore potente.</p>
                         </div>
                     </div>
-                  
+                    <div class="car-details" id="alfaRomeoDetails">
+                        <h5>Dettagli Alfa Romeo 4C</h5>
+                        <p>Con il suo telaio in fibra di carbonio, l'Alfa Romeo 4C offre prestazioni straordinarie e un'esperienza di guida unica.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('alfaRomeoDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Caterham Seven -->
                 <div class="col-md-4 car" data-name="Caterham">
                     <div class="card">
                         <a href="caterham.html">
-                            <img src="https://cdn-img.automoto.it/images/25228247/1200x/caterham-seven-2004-01.jpeg"
+                            <img src="https://media.gqitalia.it/photos/64b71bc058456626df746edb/16:9/w_1280,c_limit/pexels-photo-2409671.jpg"
                                 class="card-img-top" alt="Caterham Seven">
                         </a>
                         <span class="favorite" onclick="toggleFavorite(this)">★</span>
@@ -227,14 +224,18 @@
                             <p class="card-text">Un'auto leggera e sportiva per veri appassionati di driving.</p>
                         </div>
                     </div>
-                
+                    <div class="car-details" id="caterhamDetails">
+                        <h5>Dettagli Caterham Seven</h5>
+                        <p>La Caterham Seven è l'auto perfetta per gli amanti del brivido, con un design minimalista e una potenza sorprendente.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('caterhamDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Tesla Model S -->
                 <div class="col-md-4 car" data-name="Tesla">
                     <div class="card">
                         <a href="tesla.html">
-                            <img src="https://hips.hearstapps.com/hmg-prod/images/2024-tesla-model-s-107-6572200e43fa1.jpg?crop=0.497xw:0.560xh;0.243xw,0.232xh&resize=768:*"
+                            <img src="https://media.gqitalia.it/photos/61d846b9e6f38a90a1f09a08/16:9/w_1280,c_limit/tesla.jpg"
                                 class="card-img-top" alt="Tesla Model S">
                         </a>
                         <span class="favorite" onclick="toggleFavorite(this)">★</span>
@@ -243,14 +244,18 @@
                             <p class="card-text">L'auto elettrica che sta cambiando il mondo.</p>
                         </div>
                     </div>
-                   
+                    <div class="car-details" id="teslaDetails">
+                        <h5>Dettagli Tesla Model S</h5>
+                        <p>La Tesla Model S è nota per le sue straordinarie prestazioni e per la sua autonomia superiore a 600 km, rendendola una delle migliori auto elettriche sul mercato.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('teslaDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Ferrari 488 GTB -->
                 <div class="col-md-4 car" data-name="Ferrari">
                     <div class="card">
                         <a href="ferrari.html">
-                            <img src="https://c4.wallpaperflare.com/wallpaper/532/157/241/ferrari-488-gtb-car-red-cars-wallpaper-preview.jpg"
+                            <img src="https://media.gqitalia.it/photos/610ff7b1e43046d0660c1123/16:9/w_1280,c_limit/ferrari.jpg"
                                 class="card-img-top" alt="Ferrari 488 GTB">
                         </a>
                         <span class="favorite" onclick="toggleFavorite(this)">★</span>
@@ -259,7 +264,11 @@
                             <p class="card-text">Una supercar con prestazioni straordinarie e un design iconico.</p>
                         </div>
                     </div>
-                   
+                    <div class="car-details" id="ferrariDetails">
+                        <h5>Dettagli Ferrari 488 GTB</h5>
+                        <p>La Ferrari 488 GTB offre un motore V8 con oltre 600 cavalli, accelerazione incredibile e una tecnologia all'avanguardia per un'esperienza di guida senza pari.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('ferrariDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Ford Mustang -->
@@ -275,7 +284,11 @@
                             <p class="card-text">La muscle car americana per eccellenza.</p>
                         </div>
                     </div>
-                  
+                    <div class="car-details" id="fordDetails">
+                        <h5>Dettagli Ford Mustang</h5>
+                        <p>Icona delle auto sportive americane, la Ford Mustang combina potenza, stile e un'eredità senza tempo.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('fordDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Honda Civic Type R -->
@@ -291,7 +304,11 @@
                             <p class="card-text">La hatchback sportiva con prestazioni eccezionali.</p>
                         </div>
                     </div>
-                  
+                    <div class="car-details" id="hondaDetails">
+                        <h5>Dettagli Honda Civic Type R</h5>
+                        <p>La Honda Civic Type R è famosa per il suo design aerodinamico e il motore turbo potente, rendendola una delle migliori hatchback sportive sul mercato.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('hondaDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Mercedes-Benz EQS -->
@@ -307,7 +324,11 @@
                             <p class="card-text">Il lusso elettrico in una berlina elegante e innovativa.</p>
                         </div>
                     </div>
-                
+                    <div class="car-details" id="mercedesDetails">
+                        <h5>Dettagli Mercedes-Benz EQS</h5>
+                        <p>La EQS è una berlina elettrica di lusso che offre comfort senza precedenti, tecnologia all'avanguardia e prestazioni superiori, rendendola una delle migliori nel suo segmento.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('mercedesDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Subaru WRX STI -->
@@ -323,7 +344,11 @@
                             <p class="card-text">L'auto sportiva con trazione integrale e prestazioni eccezionali.</p>
                         </div>
                     </div>
-                  
+                    <div class="car-details" id="subaruDetails">
+                        <h5>Dettagli Subaru WRX STI</h5>
+                        <p>Famosa per la sua trazione integrale e le prestazioni in pista, la Subaru WRX STI è un'auto sportiva che promette adrenalina pura.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('subaruDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Lamborghini Huracán -->
@@ -339,7 +364,11 @@
                             <p class="card-text">Un'icona di potenza e stile senza compromessi.</p>
                         </div>
                     </div>
-            
+                    <div class="car-details" id="lamborghiniDetails">
+                        <h5>Dettagli Lamborghini Huracán</h5>
+                        <p>La Lamborghini Huracán combina un design mozzafiato con un motore V10, rendendola una delle supercar più desiderate al mondo.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('lamborghiniDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Audi R8 -->
@@ -355,7 +384,11 @@
                             <p class="card-text">Un'auto sportiva di lusso con prestazioni senza pari.</p>
                         </div>
                     </div>
-               
+                    <div class="car-details" id="audiDetails">
+                        <h5>Dettagli Audi R8</h5>
+                        <p>L'Audi R8 è famosa per il suo design elegante e le prestazioni mozzafiato, con un motore V10 che la rende una delle migliori nel suo segmento.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('audiDetails')">Chiudi</button>
+                    </div>
                 </div>
 
                 <!-- Porsche 911 -->
@@ -371,7 +404,11 @@
                             <p class="card-text">La leggendaria sportiva con un'eredità senza tempo.</p>
                         </div>
                     </div>
-                   
+                    <div class="car-details" id="porscheDetails">
+                        <h5>Dettagli Porsche 911</h5>
+                        <p>La Porsche 911 è un'icona automobilistica, famosa per le sue prestazioni eccezionali e il suo design distintivo che l'hanno resa un simbolo di stile.</p>
+                        <button class="btn btn-secondary" onclick="toggleDetails('porscheDetails')">Chiudi</button>
+                    </div>
                 </div>
                 <!-- Nissan GT-R -->
 <div class="col-md-4 car" data-name="Nissan">
@@ -386,7 +423,11 @@
             <p class="card-text">Una supercar giapponese con prestazioni da urlo.</p>
         </div>
     </div>
-
+    <div class="car-details" id="nissanDetails">
+        <h5>Dettagli Nissan GT-R</h5>
+        <p>La Nissan GT-R è celebre per la sua potenza e la sua agilità, con un motore V6 twin-turbo che offre un'esperienza di guida adrenalinica.</p>
+        <button class="btn btn-secondary" onclick="toggleDetails('nissanDetails')">Chiudi</button>
+    </div>
 </div>
 
 <!-- Aston Martin DB11 -->
@@ -402,7 +443,11 @@
             <p class="card-text">Un'auto di lusso con prestazioni straordinarie.</p>
         </div>
     </div>
-  
+    <div class="car-details" id="astonDetails">
+        <h5>Dettagli Aston Martin DB11</h5>
+        <p>L'Aston Martin DB11 combina un design elegante con un motore V8 potente, offrendo un'esperienza di guida unica e raffinata.</p>
+        <button class="btn btn-secondary" onclick="toggleDetails('astonDetails')">Chiudi</button>
+    </div>
 </div>
 
             </div>
